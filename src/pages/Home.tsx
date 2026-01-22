@@ -5,12 +5,15 @@ import s from './Home.module.css'
 import ProfileCard from "../components/ui/ProfileBlock/ProfileBlock.tsx";
 import SkillFile from "../components/ui/SkillMain.tsx";
 import ButtonLink from "../components/ui/buttonLink.tsx";
-
+import ReviewSection from "../components/ui/ReviewSection.tsx";
 export default function Home() {
     const textRef = useRef<HTMLDivElement>(null);
     const profileRef = useRef<HTMLDivElement>(null);
     const skills = useRef<HTMLElement[]>([]);
-    const skillsRef = <T extends HTMLElement>(el: T) => {
+    const skillsRef = <T extends HTMLElement>(el: T | null) => {
+        if(!el){
+            return;
+        }
         if (!skills.current.includes(el)) {
             skills.current.push(el);
         }
@@ -25,10 +28,11 @@ export default function Home() {
                 .fromTo(skills.current, {x: 300, opacity: 0}, {x: 0, opacity: 1, stagger: 0.2, duration: 0.6})
         }
     }, []);
+
     return (
         <section className="z-10 flex flex-col justify-center items-center">
             <div className="flex flex-row items-center justify-evenly px-[100px] text-center">
-                <div className='basis-[20%] shrink-0'>
+                <div className='basis-[20%] max-w-[400px] shrink-0'>
                     <ProfileCard
                         ref={profileRef}
                         img={cvData.img}
@@ -71,7 +75,9 @@ export default function Home() {
                             </div>
                         </div>
                         <ButtonLink innerText={"See Skills"} url={'/skills'} ref={skillsRef}/>
+
                     </div>
+                    <ReviewSection />
                 </div>
             </div>
         </section>

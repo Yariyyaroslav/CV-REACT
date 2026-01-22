@@ -25,5 +25,11 @@ export const cvData = {
             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/960px-CSS3_logo_and_wordmark.svg.png",
             text: "CSS (Cascading Style Sheets) is a style sheet language used to describe the presentation and visual formatting of a document."
         },
+        {
+            id: 3,
+            title: "JavaScript",
+            img: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+            text: "JavaScript (JS) is a high-level, dynamically typed programming language and one of the core technologies of the World Wide Web."
+        }
     ],
 };
