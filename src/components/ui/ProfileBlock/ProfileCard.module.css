@@ -1,0 +1,42 @@
+.gradientCard {
+    position: relative;
+    padding: 5px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gradientCard::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: conic-gradient(
+            from 0deg,
+            transparent,
+            #e3e174,
+            #4495ff,
+            transparent 100%
+    );
+    animation: rotate 4s linear infinite;
+    z-index: -2;
+}
+
+.inner {
+    border-radius: 18px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.glass, .glassButton{
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(15px);
+}

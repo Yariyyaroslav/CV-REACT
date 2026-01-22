@@ -1,0 +1,34 @@
+import s from "./ProfileCard.module.css";
+
+type ProfileCardProps = {
+    img: string;
+    name: string;
+    role: string;
+    ref: React.Ref<HTMLDivElement>;
+};
+
+const ProfileCard = ({ img, name, role, ref }: ProfileCardProps) => {
+    return (
+        <div className={`flex flex-col gap-[8px] items-center shrink-0 rounded-[18px] pb-[10px]  ${s.glass}`} ref={ref}>
+            <div className={s.gradientCard}>
+                <img
+                    src={img}
+                    alt={name}
+                    className={`${s.inner} w-[400px]`}
+                />
+            </div>
+
+            <div className="text-center">
+                <p className="text-white text-xl font-semibold">
+                    {name}
+                </p>
+
+                <p className="text-white/80 text-lg">
+                    {role}
+                </p>
+            </div>
+        </div>
+    );
+};
+
+export default ProfileCard;
