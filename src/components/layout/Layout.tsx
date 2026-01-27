@@ -31,7 +31,7 @@ const Layout = ({children}: {children: ReactNode}) => {
             ><source src={cvData.video} type="video/mp4" />
             </video>
             <Navbar />
-            <main className="w-full">
+            <main className="w-full flex flex-col items-center justify-center h-full">
                 {children}
 
             </main>

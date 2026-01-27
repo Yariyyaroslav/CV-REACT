@@ -6,11 +6,19 @@ type ReviewListProps = {
 
 const ReviewList = ({ reviews }: ReviewListProps) => {
     return (
-        <div className={`flex flex-col w-full items-center shrink-0 max-w-[450px] max-h-[444px] rounded-2xl overflow-y-scroll py-[30px] gap-[20px] ${s.glass}`}>
-            {reviews.map((review) => (
-                <ReviewItem key={review.created_at} {...review} />
-            ))}
+        <div className="max-w-[450px] max-h-[444px] w-full shrink-0 overflow-hidden rounded-2xl">
+            <div
+                className={`h-full overflow-y-auto ${s.appleScroll} ${s.glass}`}
+            >
+                <div className="flex flex-col gap-[16px] p-[20px]">
+                    {reviews.map((review) => (
+                        <ReviewItem key={review.created_at} {...review} />
+                    ))}
+                </div>
+            </div>
         </div>
+
+
     );
 };
 

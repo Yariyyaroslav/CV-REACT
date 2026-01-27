@@ -30,7 +30,7 @@ const Navbar = () => {
    []);
     const linkClass = ({ isActive }: { isActive : boolean }) => isActive ? "text-blue-400 font-bold transition-colors" : "hover:text-sky-300 transition-colors";
     return (
-        <nav className={`text-[25px] px-[35px] py-[20px] ${s.glass}`} >
+        <nav className={`text-[25px] px-[35px] py-[20px] ${s.glass}`} id='mainNav' >
             <div className='flex items-center justify-between'>
                     <h1 className=" font-extrabold text-[35px]" ref={headerRef}>CV {cvData.name}</h1>
                 <div className="flex items-center gap-[25px]">

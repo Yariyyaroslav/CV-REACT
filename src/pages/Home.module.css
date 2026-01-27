@@ -41,8 +41,40 @@
     backdrop-filter: blur(15px);
 }
 
-.glassButton:hover {
-    backdrop-filter: blur(25px);
-    background: rgba(0,0,0,0.6);
-    cursor: pointer;
+.progress {
+    width: 300px;
+    height: 12px;
+    background: #1f1f1f;
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid #1f1f1f;
+}
+
+.progressFill {
+    background: rgba(81, 255, 54, 0.5);
+    transform-origin: left;
+    transform: scaleX(0);
+    height: 100%;
+}
+
+.appleScroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+
+}
+.appleScroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+.appleScroll::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+.appleScroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.65);
+    background-clip: content-box;
+}
+.appleScroll::-webkit-scrollbar-corner {
+    background: transparent;
 }
