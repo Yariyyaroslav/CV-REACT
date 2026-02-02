@@ -1,6 +1,7 @@
 import myPhoto from '../assets/photo_2026-01-20_21-57-42.jpg';
 import bgvideo from '../assets/21368-317182818.mp4'
 import ReactFoto from '../assets/react.svg'
+import RoadmapPhoto from '../assets/photo_2025-11-19_19-42-14.jpg'
 export const cvData = {
     name: "Yaryi Yaroslav",
     video: bgvideo,
@@ -10,9 +11,25 @@ export const cvData = {
     email: "",
     phone: "",
     socials: {
-        github: "",
-        telegram: ""
+        github: "Yariyyaroslav",
+        telegram: "Warpo33"
     },
+    projects: [
+        {
+            id: 1,
+            title: 'RoadMap',
+            img: RoadmapPhoto,
+            githubUrl: "https://github.com/Yariyyaroslav/TO-DO-APP",
+            description: "This is a full-featured web application for task management. The project focuses on interactivity and a modern design.",
+        },
+        {
+            id: 2,
+            title: 'Apple Music Copy',
+            img: AppleMusic,
+            githubUrl: "https://github.com/Yariyyaroslav/Final_project_JS",
+            description: "This is a full-featured web application for task management. The project focuses on interactivity and a modern design.",
+        },
+    ],
     skillsPreview: [
         {
             id: 1,

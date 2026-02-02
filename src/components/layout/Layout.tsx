@@ -20,7 +20,7 @@ const Layout = ({children}: {children: ReactNode}) => {
             })
     }, []);
     return (
-        <div className="relative min-h-screen text-white overflow-hidden flex flex-col gap-[60px]">
+        <div className="relative min-h-screen text-white flex flex-col gap-[60px]">
             <div className="absolute opacity-50 bg-black top-0 left-0 w-full h-full -z-9"></div>
             <video ref={videoRef}
                 autoPlay
@@ -31,7 +31,7 @@ const Layout = ({children}: {children: ReactNode}) => {
             ><source src={cvData.video} type="video/mp4" />
             </video>
             <Navbar />
-            <main className="w-full flex flex-col items-center justify-center h-full">
+            <main className="w-full flex flex-col items-center justify-center flex-1">
                 {children}
 
             </main>

@@ -7,10 +7,11 @@ import ButtonLink from "../components/ui/buttonLink.tsx";
 import ReviewSection from "../components/ui/ReviewSection.tsx";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import TextComponent from "../components/ui/TextComponent";
-
+import ContactComponent from "../components/ui/ContactComponent";
 gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
     const profileRef = useRef<HTMLDivElement>(null);
+    const contactRef = useRef<HTMLDivElement>(null);
     const skills = useRef<HTMLElement[]>([]);
     const text = useRef<HTMLDivElement>(null)
     const aboutRef = useRef<HTMLDivElement>(null)
@@ -28,39 +29,28 @@ const Home = () => {
 
             tl.fromTo(profileRef.current, {x: -100, opacity: 0},
                 {x: 0, opacity: 1, duration: 0.8})
+                .fromTo(contactRef.current, {x: -100, opacity: 0},
+                    {x: 0, opacity: 1, duration: 0.8})
                 .fromTo(text.current, {x: 300, opacity: 0}, {x: 0, opacity: 1, duration: 0.6})
                 .fromTo(skills.current, {x: 300, opacity: 0}, {x: 0, opacity: 1, stagger: 0.2, duration: 0.6})
                 .fromTo(aboutRef.current, {x: 300, opacity: 0}, {x: 0, opacity: 1, duration: 0.6})
         }
-        const tween = gsap.to(profileRef.current, {
-            y: -92,
-            duration: 0.35,
-            ease: "power2.out",
-            paused: true,
-        });
-
-        ScrollTrigger.create({
-            trigger: "#mainNav",
-            start: "bottom top",
-
-            onEnter: () => tween.play(),
-            onLeaveBack: () => tween.reverse(),
-        });
     }, []);
 
 
     return (
-        <section className="z-10 flex flex-col justify-center items-center relative">
-            <div className="flex flex-row items-center justify-evenly px-[100px] text-center ">
-                <div className='fixed left-[190px] top-[150px] max-w-[400px]'>
+        <section className="z-10 max-w-[1500px] w-full">
+            <div className="flex flex-row justify-between items-start text-center gap-[80px]">
+                <div className='sticky top-[110px] max-w-[400px] w-full flex flex-col gap-[40px]'>
                     <ProfileCard
                         ref={profileRef}
                         img={cvData.img}
                         name={cvData.name}
                         role="Junior Front-End Developer"
                     />
+                    <ContactComponent telegramId={cvData.socials.telegram} githubId={cvData.socials.github} ref={contactRef}/>
                 </div>
-                <div className='ml-[460px] flex flex-col gap-[40px] self-start w-full max-w-[920px]'>
+                <div className='flex flex-col gap-[40px] self-start w-full max-w-[920px]'>
                     <TextComponent name={'How I am?'} ref={text}>
                         <p>
                             I am a student currently studying front-end development and improving my skills in
