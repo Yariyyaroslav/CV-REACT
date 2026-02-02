@@ -38,7 +38,7 @@ const Skills = () => {
             );
     },[])
     return (
-        <section className='max-w-[1500px] flex flex-col justify-center items-center w-full gap-[50px]'>
+        <section className='wide:max-w-[1500px] desktop:max-w-[1300px] laptop:max-w-[1100px] tablet:max-w-[700px] mobile:max-w-[500px] max-w-[380px] flex flex-col justify-center items-center w-full gap-[50px]'>
             <h1 className='text-3xl font-medium' ref={headref}>Skills</h1>
             <div className='flex flex-col gap-[20px]'>
                 {cvData.skillsPreview.map((skill) => (

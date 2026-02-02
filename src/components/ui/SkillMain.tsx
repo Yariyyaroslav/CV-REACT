@@ -13,7 +13,7 @@ const SkillFile = ({id, title, img, text, ref}: SkillFileProps) => {
  return(
      <div
          key={id}
-         className={`max-w-[300px] text-left flex flex-row gap-[10px] rounded-2xl p-[15px] ${s.glass}`} ref={ref}
+         className={`laptop:max-w-[300px] text-left flex flex-row gap-[10px] rounded-2xl p-[15px] ${s.glass}`} ref={ref}
      >
          <img
              src={img}

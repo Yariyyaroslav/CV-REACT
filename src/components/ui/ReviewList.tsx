@@ -6,7 +6,7 @@ type ReviewListProps = {
 
 const ReviewList = ({ reviews }: ReviewListProps) => {
     return (
-        <div className="max-w-[450px] max-h-[444px] w-full shrink-0 overflow-hidden rounded-2xl">
+        <div className="desktop:max-w-[450px] tablet:max-w-[310px] max-w-[400px] max-h-[444px] w-full shrink-0 overflow-hidden rounded-2xl">
             <div
                 className={`h-full overflow-y-auto ${s.appleScroll} ${s.glass}`}
             >

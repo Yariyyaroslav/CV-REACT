@@ -14,7 +14,7 @@ const ProfileCard = ({ img, name, role, ref }: ProfileCardProps) => {
                 <img
                     src={img}
                     alt={name}
-                    className={`${s.inner} w-[400px]`}
+                    className={`${s.inner} desktop:w-[400px]`}
                 />
             </div>
 

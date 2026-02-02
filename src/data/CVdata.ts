@@ -1,7 +1,9 @@
 import myPhoto from '../assets/photo_2026-01-20_21-57-42.jpg';
 import bgvideo from '../assets/21368-317182818.mp4'
 import ReactFoto from '../assets/react.svg'
+import AppleMusic from '../assets/Screenshot 2026-02-02 184844.png'
 import RoadmapPhoto from '../assets/photo_2025-11-19_19-42-14.jpg'
+import Landing from '../assets/Screenshot 2026-02-02 185335.png'
 export const cvData = {
     name: "Yaryi Yaroslav",
     video: bgvideo,
@@ -26,8 +28,15 @@ export const cvData = {
             id: 2,
             title: 'Apple Music Copy',
             img: AppleMusic,
-            githubUrl: "https://github.com/Yariyyaroslav/Final_project_JS",
-            description: "This is a full-featured web application for task management. The project focuses on interactivity and a modern design.",
+            githubUrl: "https://github.com/Yariyyaroslav/Apple_Music_Copy",
+            description: "A lightweight Apple Music–style web app that uses the Deezer API for charts, search, albums, artists, and track previews.",
+        },
+        {
+            id: 3,
+            title: 'Landing',
+            img: Landing,
+            githubUrl: "https://github.com/Yariyyaroslav/Project",
+            description: "Simple landing page based on design from Figma.",
         },
     ],
     skillsPreview: [

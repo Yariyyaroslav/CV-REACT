@@ -32,13 +32,13 @@ const SkillsPageComponent = ({title, description, icon, level = 0, ref}: SkillsP
     }, [level]);
 
     return (
-       <div className={`flex items-center justify-center  ${s.glass} p-[25px] rounded-2xl gap-[20px] max-h-[160px]`} ref={ref}>
+       <div className={`flex items-center justify-center  ${s.glass} p-[25px] rounded-2xl gap-[20px] max-h-[240px] tablet:max-h-[160px]`} ref={ref}>
                <img src={icon} className='w-[70px] max-h-[70px]' alt={title}/>
            <div className='flex flex-col w-full gap-[10px]'>
                <div className='flex flex-row items-center gap-[15px] justify-between'>
-                   <h2 className="text-2xl text-left">{title}</h2>
+                   <h2 className="tablet:text-2xl text-xl text-left">{title}</h2>
 
-                   <div className={`${s.progress}`}>
+                   <div className={`${s.progress} tablet:max-w-full mobile:max-w-[240px] max-w-[160px]`}>
                        <div
                            ref={barRef}
                            className={`${s.progressFill}`}

@@ -26,7 +26,7 @@ const ReviewSection = () => {
         loadReviews();
     }, []);
     return (
-        <div className="flex  self-start gap-[70px]">
+        <div className="flex tablet:flex-row flex-col tablet:self-start justify-center items-center desktop:gap-[70px] gap-[30px]">
             <ReviewForm onSubmit={handleSubmit} />
             <ReviewList reviews={reviews} />
         </div>

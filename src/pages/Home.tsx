@@ -39,9 +39,9 @@ const Home = () => {
 
 
     return (
-        <section className="z-10 max-w-[1500px] w-full">
-            <div className="flex flex-row justify-between items-start text-center gap-[80px]">
-                <div className='sticky top-[110px] max-w-[400px] w-full flex flex-col gap-[40px]'>
+        <section className="z-10 flex justify-center items-center max-w-[1500px] w-full">
+            <div className="flex flex-col gap-[40px] laptop:gap-0 laptop:flex-row justify-center laptop:items-start items-center text-center wide:gap-[80px] laptop:gap-[40px]">
+                <div className=' laptop:sticky flex laptop:top-[110px] desktop:max-w-[400px] laptop:max-w-[400px] mobile:max-w-[500px] max-w-[380px] w-full flex flex-col gap-[40px]'>
                     <ProfileCard
                         ref={profileRef}
                         img={cvData.img}
@@ -50,7 +50,7 @@ const Home = () => {
                     />
                     <ContactComponent telegramId={cvData.socials.telegram} githubId={cvData.socials.github} ref={contactRef}/>
                 </div>
-                <div className='flex flex-col gap-[40px] self-start w-full max-w-[920px]'>
+                <div className='flex flex-col gap-[40px] self-start w-full desktop:max-w-[920px] laptop:max-w-[700px] tablet:max-w-[700px] mobile:max-w-[500px] max-w-[380px]'>
                     <TextComponent name={'How I am?'} ref={text}>
                         <p>
                             I am a student currently studying front-end development and improving my skills in
@@ -77,9 +77,9 @@ const Home = () => {
                     </TextComponent>
 
                     <div className='flex flex-col gap-[20px]'>
-                        <h3 className='text-left text-3xl '>Skills</h3>
+                        <h3 className='laptop:text-left text-3xl text-center'>Skills</h3>
                         <div>
-                            <div className='flex flex-row gap-[20px]'>
+                            <div className='flex laptop:flex-row flex-col items-center justify-center gap-[20px]'>
                                 {cvData.skillsPreview.map((skill, index) => (
                                     index < 3 ? (
                                         <SkillFile

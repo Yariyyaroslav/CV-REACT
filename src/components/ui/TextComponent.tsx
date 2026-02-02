@@ -8,8 +8,10 @@ type TextComponentProps = {
 };
 const TextComponent = ({ref , children, name}: TextComponentProps) => {
     return (
+
         <div className='flex flex-col gap-[20px]'>
-            <h3 className='text-left text-3xl '>{name}</h3>
+
+            <h3 className='laptop:text-left text-3xl text-center'>{name}</h3>
             <div
                 className={`text-white text-left text-[18px] leading-6.5 p-[20px] rounded-2xl self-start ${s.glass}`}
                 ref={ref}>
