@@ -6,7 +6,10 @@ type MobileMenuProps = {
     onClose: () => void;
     ref: React.Ref<HTMLElement>
 };
+import type { RootState } from '../../app/store/store.ts';
+import {useSelector} from "react-redux";
 const MobileMenuPortal = ({ isOpen, onClose, ref}: MobileMenuProps) => {
+    const darkMode = useSelector((state: RootState) => state.theme.darkMode);
     if (!isOpen) return null;
 
     return createPortal(
@@ -20,13 +23,13 @@ const MobileMenuPortal = ({ isOpen, onClose, ref}: MobileMenuProps) => {
                 className={`fixed top-0 right-0
           h-screen w-[80vw] max-w-[360px]
           z-[9999]
-          ${s.glass}
+          ${darkMode ? s.glass : s.whiteGlass}
           p-[30px]
           flex flex-col gap-[30px]
           text-white
           text-xl
           border-t-[4px] border-solid border-sky-300 
-          ${s.glass}`}
+          ${darkMode ? s.glass : s.whiteGlass}`}
                 ref={ref}
             >
 

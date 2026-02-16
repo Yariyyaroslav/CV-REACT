@@ -8,12 +8,14 @@ type SkillFileProps = {
     text: string;
     ref: React.Ref<HTMLDivElement>
 }
-
+import type { RootState } from '../../app/store/store.ts';
+import {useSelector} from "react-redux";
 const SkillFile = ({id, title, img, text, ref}: SkillFileProps) => {
- return(
+    const darkMode = useSelector((state: RootState) => state.theme.darkMode);
+    return(
      <div
          key={id}
-         className={`laptop:max-w-[300px] text-left flex flex-row gap-[10px] rounded-2xl p-[15px] ${s.glass}`} ref={ref}
+         className={`laptop:max-w-[300px] text-left flex flex-row gap-[10px] rounded-2xl p-[15px] ${darkMode ? s.glass : s.whiteGlass}`} ref={ref}
      >
          <img
              src={img}

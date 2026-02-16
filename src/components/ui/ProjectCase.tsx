@@ -7,12 +7,15 @@ type ProjectCompProps = {
     githubUrl: string;
     ref: React.Ref<HTMLAnchorElement>;
 }
+import type { RootState } from '../../app/store/store.ts';
+import {useSelector} from "react-redux";
 const ProjectComp = ({img, name, description, githubUrl, ref}: ProjectCompProps) => {
+    const darkMode = useSelector((state: RootState) => state.theme.darkMode);
     return (
         <a
             href={githubUrl}
             target="_blank"
-            className={`relative group w-full tablet:max-w-[400px] desktop:max-w-full min-h-[300px] max-h-[450px] max-w-[380px] ${s.glass} rounded-2xl p-[30px] flex flex-col gap-[20px]`}
+            className={`relative group w-full tablet:max-w-[400px] desktop:max-w-full min-h-[300px] max-h-[450px] max-w-[380px] ${darkMode ? s.glass : s.whiteGlass} rounded-2xl p-[30px] flex flex-col gap-[20px]`}
             ref={ref}
         >
             <img className="w-full rounded-xl tablet:min-h-[230px] min-h-[200px] object-fit" src={img} alt=""/>

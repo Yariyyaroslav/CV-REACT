@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 import { cvData } from '../../data/CVdata';
 import s from './Footer.module.css'
 gsap.registerPlugin(ScrollTrigger)
+import type { RootState } from '../../app/store/store.ts';
+import {useSelector} from "react-redux";
 const Footer = () => {
+    const darkMode = useSelector((state: RootState) => state.theme.darkMode);
     const linksRef = useRef<HTMLAnchorElement[]>([]);
     const addlinks =  (el: HTMLAnchorElement)=> {
         if(el && !linksRef.current.includes(el)) {
@@ -35,7 +38,7 @@ const Footer = () => {
     }, []);
 
     return (
-        <footer className={`flex flex-col items-center p-[40px] gap-[25px] ${s.glass}`}>
+        <footer className={`flex flex-col items-center p-[40px] gap-[25px] ${darkMode ? s.glass : s.whiteGlass}`}>
             <h3 className=" font-extrabold text-[35px] w-full text-left">CV {cvData.name}</h3>
             <div>
                 <div className='flex flex-row gap-[20px] text-[20px] items-center'>

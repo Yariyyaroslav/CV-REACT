@@ -1,5 +1,7 @@
 import {useState} from "react";
 import s from "../../pages/Home.module.css"
+import type { RootState } from '../../app/store/store.ts';
+import {useSelector} from "react-redux";
 type ReviewProps = {
     name: string;
     text: string;
@@ -11,6 +13,7 @@ type FormProps = {
 
 
 const ReviewForm = ({ onSubmit }: FormProps) => {
+    const darkMode = useSelector((state: RootState) => state.theme.darkMode);
     const [name, setName] = useState('');
     const [text, setText] = useState('');
 
@@ -22,7 +25,7 @@ const ReviewForm = ({ onSubmit }: FormProps) => {
 
     }
     return (
-        <form action="#" className={`${s.glass} flex flex-col items-center justify-center p-[30px] rounded-2xl w-full desktop:max-w-[400px] tablet:max-w-[360px] max-w-[400px] shrink-0`} onSubmit={handleSubmit}>
+        <form action="#" className={`${darkMode ? s.glass : s.whiteGlass} flex flex-col items-center justify-center p-[30px] rounded-2xl w-full desktop:max-w-[400px] tablet:max-w-[360px] max-w-[400px] shrink-0`} onSubmit={handleSubmit}>
             <div className="flex flex-col gap-[20px] w-full">
                 <h2 className='text-3xl font-bold text-left'>Leave your review</h2>
                 <div className='flex flex-col gap-[10px] text-left pl-[15px] laptop:pl-0 desktop:pl-[15px]'>

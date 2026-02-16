@@ -3,6 +3,8 @@ import {cvData} from "../data/CVdata.ts";
 import {useEffect, useRef} from "react";
 import gsap from "gsap";
 import s from "./Home.module.css";
+import type { RootState } from '../app/store/store.ts';
+import {useSelector} from "react-redux";
 const Projects = () => {
     const Projects = useRef<HTMLAnchorElement[]>([])
     const ProjectRef = (el: HTMLAnchorElement) => {
@@ -11,6 +13,7 @@ const Projects = () => {
             Projects.current.push(el)
         }
     };
+    const darkMode = useSelector((state: RootState) => state.theme.darkMode);
     const headref = useRef<HTMLHeadingElement>(null)
     useEffect(() => {
         const tl = gsap.timeline();
@@ -48,7 +51,7 @@ const Projects = () => {
                <a
                    href={cvData.socials.github}
                    target="_blank"
-                   className={`relative group w-full min-h-[300px] ${s.glass} rounded-2xl p-[30px] col-span-1
+                   className={`relative group w-full min-h-[300px] ${darkMode ? s.glass : s.whiteGlass} rounded-2xl p-[30px] col-span-1
     col-start-2 flex flex-col justify-center items-center gap-[20px] max-w-[380px]
     tablet:max-w-[400px] desktop:max-w-full max-h-[450px]`}
                    ref={ProjectRef}

@@ -6,10 +6,12 @@ type ProfileCardProps = {
     role: string;
     ref: React.Ref<HTMLDivElement>;
 };
-
+import type { RootState } from '../../../app/store/store.ts';
+import {useSelector} from "react-redux";
 const ProfileCard = ({ img, name, role, ref }: ProfileCardProps) => {
+    const darkMode = useSelector((state: RootState) => state.theme.darkMode);
     return (
-        <div className={`flex flex-col gap-[8px] items-center shrink-0 rounded-[18px] pb-[10px]  ${s.glass}`} ref={ref}>
+        <div className={`flex flex-col gap-[8px] items-center shrink-0 rounded-[18px] pb-[10px] ${darkMode ? s.glass : s.whiteGlass}`} ref={ref}>
             <div className={s.gradientCard}>
                 <img
                     src={img}

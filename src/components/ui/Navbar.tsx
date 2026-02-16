@@ -4,8 +4,12 @@ import { cvData } from '../../data/CVdata';
 import s from './Navbar.module.css'
 import gsap from "gsap";
 import MobileMenuPortal from "./MobileMenuPortal";
+import ThemeToggle from '../../features/ThemeButton.tsx'
 import arrow from '../../assets/PikPng.com_left-arrow-png_2855074.png'
+import type { RootState } from '../../app/store/store.ts';
+import {useSelector} from "react-redux";
 const Navbar = () => {
+    const darkMode = useSelector((state: RootState) => state.theme.darkMode);
     const [menuOpen, setMenuOpen] = useState(false);
     const mobileMenuRef = useRef<HTMLElement>(null);
     const headerRef = useRef<HTMLHeadingElement>(null);
@@ -38,18 +42,21 @@ const Navbar = () => {
     const linkClass = ({ isActive }: { isActive : boolean }) => isActive ? "text-blue-400 font-bold transition-colors" : "hover:text-sky-300 transition-colors";
     return (
         <>
-            <nav className={`text-[25px] px-[35px] py-[20px] ${s.glass} z-10`} id='mainNav' >
+            <nav className={`text-[25px] px-[35px] py-[20px] ${darkMode ? s.glass : s.whiteGlass} z-10`} id='mainNav' >
                 <div className='flex items-center justify-between'>
                     <h1 className=" font-extrabold text-[35px]" ref={headerRef}>CV {cvData.name}</h1>
-                    <div className="tablet:flex hidden items-center gap-[25px]">
-                        <NavLink ref={addToRefs} to="/" className={linkClass}>Home</NavLink>
-                        <NavLink ref={addToRefs} to="/skills" className={linkClass}>Skills</NavLink>
-                        <NavLink ref={addToRefs} to="/projects" className={linkClass}>Projects</NavLink>
-                        <NavLink ref={addToRefs} to="/expirience" className={linkClass}>Experience</NavLink>
+                    <div className='flex items-center justify-between gap-[15px]'>
+                        <div className="tablet:flex hidden items-center gap-[25px]">
+                            <NavLink ref={addToRefs} to="/" className={linkClass}>Home</NavLink>
+                            <NavLink ref={addToRefs} to="/skills" className={linkClass}>Skills</NavLink>
+                            <NavLink ref={addToRefs} to="/projects" className={linkClass}>Projects</NavLink>
+                            <NavLink ref={addToRefs} to="/expirience" className={linkClass}>Experience</NavLink>
+                        </div>
+                        <ThemeToggle />
+                        <button className='tablet:hidden'>
+                            <img className='w-[30px] h-[45px]' src={arrow} alt="menu" onClick={() => setMenuOpen(true)}/>
+                        </button>
                     </div>
-                    <button className='tablet:hidden'>
-                        <img className='w-[30px] h-[45px]' src={arrow} alt="menu" onClick={() => setMenuOpen(true)}/>
-                    </button>
                 </div>
             </nav>
             <MobileMenuPortal

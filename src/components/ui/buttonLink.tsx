@@ -6,12 +6,14 @@ type ButtonLinkProps = {
     url: string,
     ref: React.Ref<HTMLAnchorElement>
 }
-
+import type { RootState } from '../../app/store/store.ts';
+import {useSelector} from "react-redux";
 const ButtonLink = ({innerText, url, ref}: ButtonLinkProps) => {
+    const darkMode = useSelector((state: RootState) => state.theme.darkMode);
     return (
         <Link
             to={url}
-            className={`${s.glassButton} max-w-fit px-[25px] py-[20px] rounded-2xl 
+            className={`${darkMode ? s.glassButton : s.whiteGlassButton} max-w-fit px-[25px] py-[20px] rounded-2xl 
         flex items-center justify-center gap-[10px] text-[18px]`}
         ref={ref} >
             {innerText}

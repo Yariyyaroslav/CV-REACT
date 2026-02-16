@@ -40,6 +40,10 @@
     background: rgba(0,0,0,0.5);
     backdrop-filter: blur(15px);
 }
+.whiteGlass, .whiteGlassButton {
+    background: rgba(255, 255, 255, 0.31);
+    backdrop-filter: blur(15px);
+}
 
 .progress {
     width: 300px;

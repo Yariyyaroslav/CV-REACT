@@ -9,9 +9,10 @@ type SkillsPageComponentProps = {
     level?: number;
     ref: Ref<HTMLDivElement>;
 };
-
+import type { RootState } from '../../app/store/store.ts';
+import {useSelector} from "react-redux";
 const SkillsPageComponent = ({title, description, icon, level = 0, ref}: SkillsPageComponentProps) => {
-
+    const darkMode = useSelector((state: RootState) => state.theme.darkMode);
     const barRef = useRef<HTMLDivElement>(null);
     const color =
         level <= 30
@@ -32,7 +33,7 @@ const SkillsPageComponent = ({title, description, icon, level = 0, ref}: SkillsP
     }, [level]);
 
     return (
-       <div className={`flex items-center justify-center  ${s.glass} p-[25px] rounded-2xl gap-[20px] max-h-[240px] tablet:max-h-[160px]`} ref={ref}>
+       <div className={`flex items-center justify-center  ${darkMode ? s.glass : s.whiteGlass} p-[25px] rounded-2xl gap-[20px] max-h-[240px] tablet:max-h-[160px]`} ref={ref}>
                <img src={icon} className='w-[70px] max-h-[70px]' alt={title}/>
            <div className='flex flex-col w-full gap-[10px]'>
                <div className='flex flex-row items-center gap-[15px] justify-between'>
