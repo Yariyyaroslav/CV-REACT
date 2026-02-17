@@ -6,6 +6,7 @@ import Skills from './pages/Skills';
 import {store} from "./app/store/store.ts";
 import {Provider} from "react-redux";
 import Projects from './pages/Projects';
+import Expirience from './pages/Expirience';
 import Toast from "./components/ui/ToastPortal.tsx";
 import ScrollHash from "./components/ui/ScrollHash.tsx";
 function App() {
@@ -19,6 +20,7 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/skills" element={<Skills />} />
                   <Route path="/projects" element={<Projects />} />
+                  <Route path="/expirience" element={<Expirience />} />
               </Routes>
           </Layout>
 

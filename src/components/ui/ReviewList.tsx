@@ -8,7 +8,7 @@ import {useSelector} from "react-redux";
 const ReviewList = ({ reviews }: ReviewListProps) => {
     const darkMode = useSelector((state: RootState) => state.theme.darkMode);
     return (
-        <div className="desktop:max-w-[450px] tablet:max-w-[310px] max-w-[400px] max-h-[444px] w-full shrink-0 overflow-y-scroll rounded-2xl">
+        <div className="desktop:max-w-[450px] tablet:max-w-[310px] max-w-[400px] h-[444px] w-full shrink-0 overflow-y-auto  rounded-2xl">
             <div
                 className={`h-full overflow-y-auto ${s.appleScroll} ${darkMode ? s.glass : s.whiteGlass}`}
             >

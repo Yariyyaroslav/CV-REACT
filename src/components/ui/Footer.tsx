@@ -19,7 +19,7 @@ const Footer = () => {
         gsap.fromTo(
             linksRef.current,
             {
-                y: 60,
+                y: 40,
                 opacity: 0,
             },
             {
@@ -30,7 +30,7 @@ const Footer = () => {
                 stagger: 0.1,
                 scrollTrigger: {
                     trigger: "footer",
-                    start: "top 85%",
+                    start: "top 90%",
                     once: true,
                 },
             }
