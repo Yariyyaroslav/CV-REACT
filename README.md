@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# 🚀 Modern Developer Portfolio (SPA) — Yaroslav Yaryi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Це сучасний веб-додаток — портфоліо розробника, реалізований як **Single Page Application (SPA)**. Проєкт поєднує в собі високу продуктивність, плавну анімацію та глибоку інтеграцію з хмарними сервісами.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Технологічний стек
 
-## React Compiler
+Проєкт побудований на передових інструментах фронтенд-розробки:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Framework:** `React` + `Vite` — для блискавичної збірки та роботи.
+* **State Management:** `Redux` / `Redux Toolkit` — для передбачуваного керування станом додатка.
+* **Backend & DB:** `Supabase` — використовується для зберігання та отримання відгуків у реальному часі.
+* **Animations:** `GSAP` (GreenSock Animation Platform) — для створення складних та високопродуктивних інтерфейсних анімацій.
+* **Styling:** `TailwindCss` v4.1.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Ключові особливості та функціонал
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🎨 Інтерактив та Дизайн
+* **GSAP Animations:** Весь інтерфейс "оживлений" за допомогою бібліотеки GSAP. Плавні появи, трансформації та переходи створюють преміальний досвід користування.
+* **Theme Switcher:** У правому верхньому куті розташована кнопка перемикання між темною та світлою темами.
+* **SPA Navigation:** Миттєвий перехід між розділами сайту без перезавантаження сторінок.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 💬 Система відгуків у реальному часі
+* **Live Feedback:** На сайті реалізована можливість залишити відгук. Завдяки інтеграції з **Supabase**, нові повідомлення миттєво відображаються у спеціальній панелі праворуч.
+* **Smart Toast:** Через певний час після входу на сайт у нижньому правому куті з'являється спливаюче сповіщення (Toast). Клік по ньому дозволяє користувачу швидко перейти до форми зворотного зв'язку.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 📂 Інтерактивні Проєкти
+* **Quick GitHub Access:** У розділі «Проєкти» реалізована зручна навігація: достатньо навести курсор на контейнер сторінки проєкту, щоб отримати пряме посилання на його репозиторій у GitHub.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔧 Локальний запуск
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1.  **Клонуйте репозиторій:**
+    ```bash
+    git clone [https://github.com/Yariy-Yaroslav/cv-project.git](https://github.com/Yariy-Yaroslav/cv-project.git)
+    ```
+2.  **Встановіть залежності:**
+    ```bash
+    npm install
+    ```
+3.  **Налаштуйте змінні оточення:**
+    Створіть файл `.env` у корені проєкту та додайте ваші ключі Supabase:
+    ```env
+    VITE_SUPABASE_URL=your_url
+    VITE_SUPABASE_ANON_KEY=your_key
+    ```
+4.  **Запустіть проєкт у режимі розробки:**
+    ```bash
+    npm run dev
+    ```
+
+---
+
+## 🌐 Посилання на Live Demo
+Переглянути працюючий проєкт можна тут: [https://cv-yariy.netlify.app/](https://cv-yariy.netlify.app/)
+
+---
+**Розроблено Ярославом Ярим.**
